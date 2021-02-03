@@ -51,22 +51,32 @@ const App = (props) => {
 	//state of notes to be displayed:
 	const [showAll, setShowAll] = useState(true)
 
+	//use axios to talk with json-server
+	//longer method:
+	/*const promise = axios.get('http://localhost:3001/notes')
+	console.log(promise)
+	promise.then(response => {
+		console.log(response)
+	})*/
+	//shorter syntax + use of side effects with useEffect() so that it is executed immediately after rendering:
+	const hook = () => {
+		console.log('effect')
+		axios
+			.get('http://localhost:3001/notes')
+			.then(response => {
+				console.log('promise fulfilled')
+				setNotes(response.data)
+			})
+	}
+	console.log('render', notes.length, 'notes: ', notes)
+	//second parameter [] specify that effect runs only with first render of component
+	useEffect(hook, [])
+
 	//HTML form for adding new notes
 	const addNote = (event) => {
 		event.preventDefault()
 		console.log('button clicked', event.target)
-		//create new object for new note
-		const noteObject = {
-			content: newNote,
-			date: new Date().toISOString(),
-			important: Math.random() < 0.5,
-			id: notes.length + 1,
-		}
-		//add note to array 'notes'
-		setNotes(notes.concat(noteObject))
-		setNewNote('a new note...')
-
-		//create new object (duplicate) with no id because better sever handle this itself
+		//create new object for new note (duplicate) with no id because better sever handle this itself
 		const noteObjectDb = {
 			content: newNote,
 			date: new Date().toISOString(),
@@ -77,8 +87,12 @@ const App = (props) => {
 			.post('http://localhost:3001/notes', noteObjectDb)
 			.then(response => {
 				console.log(response)
+				//let's update state 'notes' with new note saved in 'db.json'
+				setNotes(notes.concat(response.data))
+				setNewNote('a new note...')
 			})
 	}
+
 	//event handler to synchronize the changes in the input with the component's state:
 	const handleNoteChange = (event) => {
 		console.log(event.target.value)
@@ -103,27 +117,6 @@ const App = (props) => {
 			})
 	}
 
-
-	//use axios to talk with json-server
-	//longer method:
-	/*const promise = axios.get('http://localhost:3001/notes')
-	console.log(promise)
-	promise.then(response => {
-		console.log(response)
-	})*/
-	//shorter syntax + use of side effects with useEffect() so that it is executed immediately after rendering:
-	const hook = () => {
-		console.log('effect')
-		axios
-			.get('http://localhost:3001/notes')
-			.then(response => {
-				console.log('promise fulfilled')
-				setNotes(response.data)
-			})
-	}
-	console.log('render', notes.length, 'notes: ', notes)
-	//second parameter [] specify that effect runs only with first render of component
-	useEffect(hook, [])
 
 	return (
 		<div>
