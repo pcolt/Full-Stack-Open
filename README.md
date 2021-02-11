@@ -1,12 +1,15 @@
 # Full Stack Open - Part2
 Experimenting with a little React app communicating with a Json Server. From the Helsinki Unversity's [Full Stack Open 2020 - Part2 'Communicating with server'](https://fullstackopen.com/en/part2) 
 
-Topics:
+### Topics:
 * Function Components, Events, Forms, Map, Refactoring...
 * REST apis with JSON Server,
 * ES6's Promises with Axios,
 * React's Effect-hooks,
 * Standard CSS and React's Inline styles
+
+### See video of the app in action:
+[https://www.youtube.com/watch?v=qS0AghmgKqc](https://www.youtube.com/watch?v=qS0AghmgKqc)
 
 
 # Getting Started with Create React App
