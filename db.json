@@ -41,6 +41,18 @@
       "date": "2021-02-03T12:02:06.098Z",
       "important": false,
       "id": 7
+    },
+    {
+      "content": "hello from curl",
+      "date": "2021-02-07T15:00:00.661Z",
+      "important": true,
+      "id": 8
+    },
+    {
+      "content": "new note refactored",
+      "date": "2021-02-10T17:46:39.924Z",
+      "important": false,
+      "id": 9
     }
   ]
 }

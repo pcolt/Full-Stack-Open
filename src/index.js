@@ -4,6 +4,7 @@ import './index.css';
 //import external module for making notes:
 import NoteImported from './components/Note'
 import axios from 'axios'
+import './index.css'
 
 
 //initialize an array of objects representing the notes to be displayed:
@@ -32,6 +33,21 @@ const oldNotes = [
 const Note = ({ note, toggleImportance }) => {
 	return (
 		<li>{note.content}</li>
+	)
+}
+
+//footer with React's inline styles (JavaScript object + style attribute)
+const Footer = () => {
+	const footerStyle = {
+		color: 'green',
+		fontStyle: 'italic',
+		fontSize: 16,
+	}
+	return (
+		<div style={footerStyle}>
+			<br />
+			<em>Note app, Department of Computer Science, University of Helsinki 2020</em>	
+		</div>
 	)
 }
 
@@ -172,6 +188,8 @@ const App = (props) => {
 				<input value={newNote} onChange={handleNoteChange}/>
 				<button type="submit">save</button>
 			</form>
+
+			<Footer />
 		</div>
 	)
 }
