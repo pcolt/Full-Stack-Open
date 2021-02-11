@@ -1,3 +1,6 @@
+Experimenting with a little React app communicating with a Json Server. From Helsinki Unversity's Full Stack Open 2020 - Part2 'Communicating with server' 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
