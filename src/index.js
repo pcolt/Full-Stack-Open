@@ -5,6 +5,7 @@ import './index.css';
 import NoteImported from './components/Note'
 import axios from 'axios'
 import './index.css'
+import noteService from './services/notes' // module with backend axios communication 
 
 
 //initialize an array of objects representing the notes to be displayed:
@@ -77,11 +78,16 @@ const App = (props) => {
 	//shorter syntax + use of side effects with useEffect() so that it is executed immediately after rendering:
 	const hook = () => {
 		console.log('effect')
-		axios
-			.get('http://localhost:3001/notes')
-			.then(response => {
+		// axios
+		// 	.get('http://localhost:3001/notes')
+		noteService
+			.getAll()
+			// .then(response => {
+			// 	console.log('promise fulfilled')
+			// 	setNotes(response.data)
+			.then(initialNotes => {
 				console.log('promise fulfilled')
-				setNotes(response.data)
+				setNotes(initialNotes)
 			})
 	}
 	console.log('render', notes.length, 'notes: ', notes)
