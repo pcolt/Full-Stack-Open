@@ -25,7 +25,6 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `npm run server` 
-(does not work any more as it is build in the same address and directory of the backend)
-Launches the JSON Server.\
+Launches the JSON Server (or run `npm start` from *part3* directory to use the Nodejs backend).\
 Open [http://localhost:3001/api/notes](http://localhost:3001/api/notes) to view all the content stored by the JSON Server in the file *db.json* and use the custom routes in *routes.json*.
 
