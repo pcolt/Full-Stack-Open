@@ -13,6 +13,8 @@ Experimenting with a little React app communicating with a Json Server. From the
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# How to run the application
+
 ### `npm run build`
 A production build of the application is created inside the directory *build*. 
 
@@ -20,7 +22,6 @@ A production build of the application is created inside the directory *build*.
 Manually copy the production build of the frontend to the root of the backend.
 
 ### `npm start`
-(does not work any more as it is build in the same address and directory of the backend)
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
