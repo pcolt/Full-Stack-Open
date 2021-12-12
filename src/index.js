@@ -6,7 +6,8 @@ import NoteImported from './components/Note'
 import axios from 'axios'
 import './index.css'
 import noteService from './services/notes' // module with backend axios communication 
-
+// const baseUrl = 'https://secure-ridge-67129.herokuapp.com/api/notes'  // back-end on heroku
+const baseUrl = '/api/notes'												// front-end and back-end on heroku
 
 //initialize an array of objects representing the notes to be displayed:
 const oldNotes = [
@@ -106,7 +107,8 @@ const App = (props) => {
 		}
 		//new object sent to server with axios and post method	
 		axios
-			.post('http://localhost:3001/api/notes', noteObjectDb)
+			//.post('http://localhost:3001/api/notes', noteObjectDb)					// back-end build locally using nodejs or json-server
+			.post(baseUrl, noteObjectDb) 	// back-end build on heroku
 			.then(response => {
 				console.log(response)
 				//let's update state 'notes' with new note saved in 'db.json'
@@ -129,7 +131,8 @@ const App = (props) => {
 		//or using template string syntax added with ES6
 		console.log(`importance of ${id} needs to be toogled`)
 		//HTTP request to note's unique URL with PUT to replace entire note with imoportant field toggled
-		const url = `http://localhost:3001/api/notes/${id}`
+		//const url = `http://localhost:3001/api/notes/${id}`					// back-end build locally using nodejs or json-server
+		const url = `${baseUrl}/${id}` 	// back-end build on heroku
 		const note = notes.find(n => n.id === id)
 		const changedNote = { ...note, important: !note.important }
 		axios
