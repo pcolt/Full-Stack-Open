@@ -9,22 +9,23 @@ Experimenting with a little React app communicating with a Json Server. From the
 * Standard CSS and React's Inline styles
 
 ### See video of the app in action:
-[https://www.youtube.com/watch?v=qS0AghmgKqc](https://www.youtube.com/watch?v=qS0AghmgKqc)
-
-
-# Getting Started with Create React App
+[https://www.youtube.com/watch?v=qS0AghmgKqc](https://www.youtube.com/watch?v=qS0AghmgKqc)\
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-In the project directory, you can run:
+### `npm run build`
+A production build of the application is created inside the directory *build*. 
+
+### `cp -r build/ ../root_directory_back-end-node`
+Manually copy the production build of the frontend to the root of the backend.
 
 ### `npm start`
-
+(does not work any more as it is build in the same address and directory of the backend)
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm run server`
-
+### `npm run server` 
+(does not work any more as it is build in the same address and directory of the backend)
 Launches the JSON Server.\
 Open [http://localhost:3001/api/notes](http://localhost:3001/api/notes) to view all the content stored by the JSON Server in the file *db.json* and use the custom routes in *routes.json*.
 
