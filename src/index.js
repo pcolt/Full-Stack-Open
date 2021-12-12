@@ -106,7 +106,7 @@ const App = (props) => {
 		}
 		//new object sent to server with axios and post method	
 		axios
-			.post('http://localhost:3001/notes', noteObjectDb)
+			.post('http://localhost:3001/api/notes', noteObjectDb)
 			.then(response => {
 				console.log(response)
 				//let's update state 'notes' with new note saved in 'db.json'
@@ -129,7 +129,7 @@ const App = (props) => {
 		//or using template string syntax added with ES6
 		console.log(`importance of ${id} needs to be toogled`)
 		//HTTP request to note's unique URL with PUT to replace entire note with imoportant field toggled
-		const url = `http://localhost:3001/notes/${id}`
+		const url = `http://localhost:3001/api/notes/${id}`
 		const note = notes.find(n => n.id === id)
 		const changedNote = { ...note, important: !note.important }
 		axios

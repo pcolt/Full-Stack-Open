@@ -26,5 +26,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### `npm run server`
 
 Launches the JSON Server.\
-Open [http://localhost:3001/notes](http://localhost:3001/notes) to view all the content stored by the JSON Server in the file *db.json*.
+Open [http://localhost:3001/api/notes](http://localhost:3001/api/notes) to view all the content stored by the JSON Server in the file *db.json* and use the custom routes in *routes.json*.
 
